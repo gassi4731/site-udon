@@ -4,6 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+
+    <script>
+        var request = new XMLHttpRequest();
+
+        request.open('GET', 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152-150&applicationId=1051623488993120985', true);
+        request.responseType = 'json';
+
+        request.onload = function() {
+            var data = this.response;
+            console.log(data);
+        };
+
+        request.send();
+
+    </script>
 </head>
 
 <body>
