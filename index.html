@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
 
     <script>
         var request = new XMLHttpRequest();
@@ -17,12 +20,107 @@
         };
 
         request.send();
-
     </script>
 </head>
 
 <body>
-
-</body>
-
-</html>
+    <header>
+        <div class="headerImage">
+            <img src="img/logo.png" alt="">
+        </div>
+        <nav class="gnavi main">
+            <ul>
+                <li>
+                    <div class="diamond"><a href="#">
+                            <div class="diamond__inner">
+                                <p>うどん<br>の魅力</p>
+                            </div>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="diamond"><a href="#">
+                            <div class="diamond__inner">
+                                <p>ご当地<br>うどん</p>
+                            </div>
+                        </a></div>
+                </li>
+                <li>
+                    <div class="diamond"><a href="#">
+                            <div class="diamond__inner">
+                                <p>おうち<br>うどん</p>
+                            </div>
+                        </a></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="charm" class="main">
+        <h1>旅先でも<br>うどんだ</h1>
+        <p class="desc">うどんは小麦粉に水を加えて練り合わせ、めん状に加工したものです。<br>歴史は、そばよりも古く、日本人に最も愛されてきた料理といえます。</p>
+        <div class="contents">
+            <div class="point">
+                <img src="img/japan.svg" alt="">
+                <p>日本の国民食</p>
+            </div>
+            <div class="point">
+                <img src="img/udon-navy.svg" alt="">
+                <p>バリエーション豊富</p>
+            </div>
+            <div class="point">
+                <img src="img/wallet.svg" alt="">
+                <p>お財布に優しい</p>
+            </div>
+        </div>
+    </section>
+    <section id="gotouchi">
+        <div class="main">
+            <h1>ご当地<br>うどん</h1>
+            <p class="desc">日本各地には、うどんを使った郷土料理がたくさんあります。<br>ここでは、全国の個性的なうどんを紹介します。</p>
+        </div>
+    </section>
+    <section id="home">
+        <div class="main">
+            <h1>おうち<br>うどん</h1>
+            <p class="desc">旅に行けなくても、うどんは家で楽しむことができます。<br>楽天レシピに掲載されている個性的なレシピを紹介します。</p>
+        </div>
+        <div class="rakuten">
+            <a href="#">
+                <div class="content">
+                    <img src="img/header.jpg" alt="">
+                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="content">
+                    <img src="img/header.jpg" alt="">
+                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="content">
+                    <img src="img/header.jpg" alt="">
+                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="content">
+                    <img src="img/header.jpg" alt="">
+                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="content">
+                    <img src="img/header.jpg" alt="">
+                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    <footer class="main">
+        <div class="sns">
+           <a href="#"><img src="img/facebook.svg"></a>
+           <a href="#"><img src="img/twitter.svg"></a>
+        </div>
+        <p class="desc">&copy; Yo Higashida</p>
+    </footer>
+</body></html>
