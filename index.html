@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="hamburger.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="hamburger.js"></script>
     <script>
         var request = new XMLHttpRequest();
 
@@ -25,27 +28,39 @@
 
 <body>
     <header>
+       <div class="hamburger">
+            <nav class="dc-menu">
+                <a href="#" class="dc-menu-trigger"><span>Menu</span></a>
+                <div class="menu-overlay">
+                    <ul>
+                        <li class="menu-button"><a href="#">Profile</a></li>
+                        <li class="menu-button"><a href="#">Settings</a></li>
+                        <li class="menu-button"><a href="#">Reports</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         <div class="headerImage">
             <img src="img/logo.png" alt="">
         </div>
         <nav class="gnavi main">
             <ul>
                 <li>
-                    <div class="diamond"><a href="#">
+                    <div class="diamond"><a href="#charm">
                             <div class="diamond__inner">
                                 <p>うどん<br>の魅力</p>
                             </div>
                         </a></div>
                 </li>
                 <li>
-                    <div class="diamond"><a href="#">
+                    <div class="diamond"><a href="#gotouchi">
                             <div class="diamond__inner">
                                 <p>ご当地<br>うどん</p>
                             </div>
                         </a></div>
                 </li>
                 <li>
-                    <div class="diamond"><a href="#">
+                    <div class="diamond"><a href="#home">
                             <div class="diamond__inner">
                                 <p>おうち<br>うどん</p>
                             </div>
@@ -74,16 +89,22 @@
     </section>
     <section id="gotouchi">
         <div class="main">
-            <h1>ご当地<br>うどん</h1>
+            <h1>ご当地うどん</h1>
             <p class="desc">日本各地には、うどんを使った郷土料理がたくさんあります。<br>ここでは、全国の個性的なうどんを紹介します。</p>
         </div>
     </section>
     <section id="home">
         <div class="main">
-            <h1>おうち<br>うどん</h1>
+            <h1>おうちうどん</h1>
             <p class="desc">旅に行けなくても、うどんは家で楽しむことができます。<br>楽天レシピに掲載されている個性的なレシピを紹介します。</p>
         </div>
         <div class="rakuten">
+            <a href="#">
+                <div class="content">
+                    <img src="img/header.jpg" alt="">
+                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
+                </div>
+            </a>
             <a href="#">
                 <div class="content">
                     <img src="img/header.jpg" alt="">
@@ -118,8 +139,8 @@
     </section>
     <footer class="main">
         <div class="sns">
-           <a href="#"><img src="img/facebook.svg"></a>
-           <a href="#"><img src="img/twitter.svg"></a>
+            <a href="#"><img src="img/facebook.svg"></a>
+            <a href="#"><img src="img/twitter.svg"></a>
         </div>
         <p class="desc">&copy; Yo Higashida</p>
     </footer>

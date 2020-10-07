@@ -41,6 +41,27 @@ h1 {
     font-size: 20px;
 }
 
+@media screen and (max-width:479px) {
+    .main {
+        width: 100%;
+        margin: 100px auto;
+    }
+
+    h1 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+
+    p,
+    a {
+        font-size: 15px;
+    }
+
+    .main .desc {
+        padding: 0 40px;
+    }
+}
+
 /*header
 ----------------------------------------*/
 
@@ -110,16 +131,30 @@ header .diamond__inner {
     text-align: center;
 }
 
+@media screen and (max-width:479px) {
+    header img {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    header .gnavi {
+        display: none;
+        height: 0px;
+    }
+}
+
 /*旅先でもうどんだ
 ----------------------------------------*/
 #charm .contents {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 #charm .point {
     width: 300px;
     text-align: center;
+    margin: 0 auto;
 }
 
 #charm .point img {
@@ -131,6 +166,25 @@ header .diamond__inner {
 #charm .point p {
     font-size: 30px;
     font-weight: bold;
+}
+
+@media screen and (max-width:479px) {
+    #charm .contents {
+        margin: 0 auto;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #charm .point img {
+        width: 105px;
+        height: 105px;
+    }
+
+    #charm .point p {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
 }
 
 /*ご当地うどん
@@ -148,13 +202,14 @@ header .diamond__inner {
 
 .rakuten {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
     margin-bottom: 200px;
 }
 
 .rakuten .content {
     width: 300px;
+    margin: 5px;
 }
 
 .rakuten .content img {
@@ -166,6 +221,27 @@ header .diamond__inner {
 .rakuten .content p {
     font-size: 25px;
     font-weight: bold;
+}
+
+@media screen and (max-width:479px) {
+    .rakuten {
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+    }
+
+    .rakuten .content {
+        width: 175px;
+        margin: 0 5px;
+    }
+
+    .rakuten .content img {
+        width: 175px;
+        height: 175px;
+    }
+
+    .rakuten .content p {
+        font-size: 15px;
+    }
 }
 
 /*footer
