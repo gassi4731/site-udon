@@ -31,7 +31,7 @@ h4 {
 }
 
 @media screen and (max-width:479px) {
-    .hamburger{
+    .hamburger {
         display: block;
     }
 }
@@ -164,11 +164,11 @@ nav {
 }
 
 .menu-overlay.open ul {
-/*
+    /*
     top: 40px;
     left: 0;
 */
-    top:25%;
+    top: 25%;
     right: 50%;
     visibility: visible;
     opacity: 1;

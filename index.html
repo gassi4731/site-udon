@@ -12,23 +12,70 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="hamburger.js"></script>
     <script>
+        //楽天API
+        //requestで、アレンジうどんを4つ取得・request2で、うどんを4つ取得。
+        //randomで、request2から1つ選び、requestと繋ぎ合わせて5つのレシピをdata3に格納。
+        var data3;
+        var random = Math.round( Math.random()*3 );
         var request = new XMLHttpRequest();
+        var request2 = new XMLHttpRequest();
 
         request.open('GET', 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152-150&applicationId=1051623488993120985', true);
         request.responseType = 'json';
 
+        request2.open('GET', 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152&applicationId=1051623488993120985', true);
+        request2.responseType = 'json';
+
         request.onload = function() {
-            var data = this.response;
-            console.log(data);
+            var data = this.response.result;
+
+            request2.onload = function() {
+                var data2 = this.response.result;
+                console.log(data2[0]);
+                data3 = data.concat(data2[random]);
+                console.log(data3);
+            };
         };
 
         request.send();
+        request2.send();
+    </script>
+
+    <script>
+        (function(d) {
+            var config = {
+                    kitId: 'bxl2jri',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                h = d.documentElement,
+                t = setTimeout(function() {
+                    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function() {
+                a = this.readyState;
+                if (f || a && a != "complete" && a != "loaded") return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config)
+                } catch (e) {}
+            };
+            s.parentNode.insertBefore(tk, s)
+        })(document);
     </script>
 </head>
 
 <body>
     <header>
-       <div class="hamburger">
+        <div class="hamburger">
             <nav class="dc-menu">
                 <a href="#" class="dc-menu-trigger"><span>Menu</span></a>
                 <div class="menu-overlay">
@@ -70,7 +117,7 @@
         </nav>
     </header>
     <section id="charm" class="main">
-        <h1>旅先でも<br>うどんだ</h1>
+        <h1><span style="line-height: 100px">旅先でも</span><br>うどんだ</h1>
         <p class="desc">うどんは小麦粉に水を加えて練り合わせ、めん状に加工したものです。<br>歴史は、そばよりも古く、日本人に最も愛されてきた料理といえます。</p>
         <div class="contents">
             <div class="point">
@@ -129,14 +176,6 @@
                     <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
                 </div>
             </a>
-<!--
-            <a href="#">
-                <div class="content">
-                    <img src="img/header.jpg" alt="">
-                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
-                </div>
-            </a>
--->
         </div>
     </section>
     <footer class="main">
