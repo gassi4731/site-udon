@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="hamburger.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="hamburger.js"></script>
+    
+    <!--楽天API-->
     <script>
-        //楽天API
-        //requestで、アレンジうどんを4つ取得・request2で、うどんを4つ取得。
-        //randomで、request2から1つ選び、requestと繋ぎ合わせて5つのレシピをdata3に格納。
         var data3;
         var random = Math.round(Math.random() * 3);
         var request = new XMLHttpRequest();
@@ -31,16 +30,41 @@
 
             request2.onload = function() {
                 var data2 = this.response.result;
-                console.log(data2[0]);
+                console.log(data2[0]['foodImageUrl']);
                 data3 = data.concat(data2[random]);
                 console.log(data3);
+
+                $(function() {
+                    for (var i = 0; i <= 4; i++) {
+                        console.log(i);
+                        console.log(data3[i]);
+                        create(data3[i]['foodImageUrl'], data3[i]['recipeUrl'], data3[i]['recipeTitle']);
+                    }
+                });
             };
         };
 
         request.send();
         request2.send();
+    
+        //DOM生成
+        function create(img, url, text) {
+            var card = $("<a>").attr({
+                href: url,
+                class: "item",
+                target: "_blank"
+            });
+            var content = $("<div>").addClass("content");
+            content.append($("<img>").attr({
+                src: img,
+                alt: ""
+            }));
+            content.append($("<p>").text(text));
+            card.append(content);
+            $('.rakuten').append(card);
+        }
     </script>
-
+    <!--font-->
     <script>
         (function(d) {
             var config = {
@@ -71,6 +95,7 @@
             s.parentNode.insertBefore(tk, s)
         })(document);
     </script>
+    <!--順番にフェイドイン-->
     <script>
         $(function() {
             $(window).scroll(function() {
@@ -162,36 +187,6 @@
             <p class="desc">旅に行けなくても、うどんは家で楽しむことができます。<br>楽天レシピに掲載されている個性的なレシピを紹介します。</p>
         </div>
         <div class="rakuten">
-            <a href="#" class="item">
-                <div class="content">
-                    <img src="img/header.jpg" alt="">
-                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
-                </div>
-            </a>
-            <a href="#" class="item">
-                <div class="content">
-                    <img src="img/header.jpg" alt="">
-                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
-                </div>
-            </a>
-            <a href="#" class="item">
-                <div class="content">
-                    <img src="img/header.jpg" alt="">
-                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
-                </div>
-            </a>
-            <a href="#" class="item">
-                <div class="content">
-                    <img src="img/header.jpg" alt="">
-                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
-                </div>
-            </a>
-            <a href="#" class="item">
-                <div class="content">
-                    <img src="img/header.jpg" alt="">
-                    <p>簡単!鳥とネギだけ。出汁が美味しい鳥南蛮うどん</p>
-                </div>
-            </a>
         </div>
     </section>
     <footer class="main item">
