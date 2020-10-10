@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #F7F7F7;
 }
@@ -19,7 +23,6 @@ a {
     color: #001A43;
     font-feature-settings: "palt"1;
     text-decoration: none;
-    /*    font-family: 'Noto Sans JP', sans-serif;*/
     font-family: toppan-bunkyu-gothic-pr6n, serif;
     font-weight: 400;
     font-style: normal;
@@ -66,6 +69,89 @@ h1 {
     }
 }
 
+/*画像フェイドイン
+----------------------------------------*/
+.delayed-image {
+    /* じわっと画像が表示される */
+    animation: fadeIn 3s ease 0s 1 normal;
+    -webkit-animation: fadeIn 3s ease 0s 1 normal;
+}
+
+/* じわっと画像が表示される ---------　一度追加していたら不要*/
+@keyframes fadeIn {
+
+    /*上のbody内で呼び出しているアニメーションと名前をそろえる*/
+    0% {
+        opacity: 0
+    }
+
+    /* 始め */
+    100% {
+        opacity: 1
+    }
+
+    /* 終わり */
+}
+
+/*古いブラウザ用　---------　一度追加していたら不要*/
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+/*順番にフェイドイン
+----------------------------------------*/
+.item {
+    opacity: 0;
+}
+
+.item.item-scroll:nth-child(1) {
+    -webkit-animation: example 3s ease 0.5s 1 forwards;
+    animation: example 3s ease 0.5s 1 forwards;
+}
+
+.item.item-scroll:nth-child(2) {
+    -webkit-animation: example 3s ease 1.5s 1 forwards;
+    animation: example 3s ease 1.5s 1 forwards;
+}
+
+.item.item-scroll:nth-child(3) {
+    -webkit-animation: example 3s ease 2s 1 forwards;
+    animation: example 3s ease 2s 1 forwards;
+}
+
+.item.item-scroll:nth-child(4) {
+    -webkit-animation: example 3s ease 2.5s 1 forwards;
+    animation: example 3s ease 2.5s 1 forwards;
+}
+
+.item.item-scroll:nth-child(5) {
+    -webkit-animation: example 3s ease 3s 1 forwards;
+    animation: example 3s ease 3s 1 forwards;
+}
+
+.item.item-scroll:nth-child(6) {
+    -webkit-animation: example 3s ease 3.5s 1 forwards;
+    animation: example 3s ease 3.5s 1 forwards;
+}
+
+@-webkit-keyframes example {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes example {
+    100% {
+        opacity: 1;
+    }
+}
+
 /*header
 ----------------------------------------*/
 
@@ -79,7 +165,7 @@ header {
 header .headerImage {
     width: 100%;
     height: 100%;
-    background-image: url(img/header.jpg);
+    background-image: url(img/header.png);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -137,7 +223,7 @@ header .diamond__inner {
     text-align: center;
 }
 
-header .diamond__inner p{
+header .diamond__inner p {
     line-height: 30px;
 }
 
@@ -186,13 +272,12 @@ header .diamond__inner p{
     }
 
     #charm .point img {
-        width: 105px;
-        height: 105px;
+        width: 150px;
+        height: 150px;
     }
 
     #charm .point p {
-        font-size: 20px;
-        margin-top: 20px;
+        font-size: 25px;
         margin-bottom: 30px;
     }
 }
