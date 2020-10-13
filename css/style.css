@@ -1,0 +1,446 @@
+@font-face {
+    font-family: 'Tomoe';
+    src: url(../fonts/姫明朝ともえごぜんmini.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F7F7F7;
+}
+
+p,
+a {
+    font-size: 20px;
+    font-weight: 100;
+    color: #001A43;
+    font-feature-settings: "palt"1;
+    text-decoration: none;
+    font-family: toppan-bunkyu-gothic-pr6n, serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main {
+    width: 1080px;
+    margin: 200px auto;
+}
+
+h1 {
+    color: #001A43;
+    font-family: 'Tomoe';
+    font-weight: normal;
+    font-size: 72px;
+    letter-spacing: 7px;
+    text-align: center;
+}
+
+.main .desc {
+    text-align: center;
+    margin: 50px auto;
+    font-size: 20px;
+}
+
+@media screen and (max-width:479px) {
+    .main {
+        width: 100%;
+        margin: 100px auto;
+    }
+
+    h1 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+
+    p,
+    a {
+        font-size: 15px;
+    }
+
+    .main .desc {
+        padding: 0 40px;
+    }
+}
+
+/*animetion.js
+----------------------------------------*/
+.close {
+    text-align: center;
+    margin: 90px 0;
+}
+
+.closebt {
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.closebt:hover {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.modal-content.main {
+    margin: 0 auto;
+}
+
+.modal-content .content{
+    margin-left: 60px;
+    min-height: 400px;
+}
+
+.modal-content img {
+    width: 340px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.modal-content{
+    display: flex;
+    align-items: center;
+}
+
+.modal-content h2,
+.modal-content p {
+    color: #fff;
+}
+
+.modal-content h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/*画像フェイドイン
+----------------------------------------*/
+.delayed-image {
+    /* じわっと画像が表示される */
+    animation: fadeIn 3s ease 0s 1 normal;
+    -webkit-animation: fadeIn 3s ease 0s 1 normal;
+}
+
+/* じわっと画像が表示される ---------　一度追加していたら不要*/
+@keyframes fadeIn {
+
+    /*上のbody内で呼び出しているアニメーションと名前をそろえる*/
+    0% {
+        opacity: 0
+    }
+
+    /* 始め */
+    100% {
+        opacity: 1
+    }
+
+    /* 終わり */
+}
+
+/*古いブラウザ用　---------　一度追加していたら不要*/
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+/*順番にフェイドイン
+----------------------------------------*/
+.item {
+    opacity: 0;
+}
+
+.item.item-scroll:nth-child(1) {
+    -webkit-animation: example 3s ease 0.5s 1 forwards;
+    animation: example 3s ease 0.5s 1 forwards;
+}
+
+.item.item-scroll:nth-child(2) {
+    -webkit-animation: example 3s ease 1.5s 1 forwards;
+    animation: example 3s ease 1.5s 1 forwards;
+}
+
+.item.item-scroll:nth-child(3) {
+    -webkit-animation: example 3s ease 2s 1 forwards;
+    animation: example 3s ease 2s 1 forwards;
+}
+
+.item.item-scroll:nth-child(4) {
+    -webkit-animation: example 3s ease 2.5s 1 forwards;
+    animation: example 3s ease 2.5s 1 forwards;
+}
+
+.item.item-scroll:nth-child(5) {
+    -webkit-animation: example 3s ease 3s 1 forwards;
+    animation: example 3s ease 3s 1 forwards;
+}
+
+.item.item-scroll:nth-child(6) {
+    -webkit-animation: example 3s ease 3.5s 1 forwards;
+    animation: example 3s ease 3.5s 1 forwards;
+}
+
+@-webkit-keyframes example {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes example {
+    100% {
+        opacity: 1;
+    }
+}
+
+/*header
+----------------------------------------*/
+
+header {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header .headerImage {
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/header.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    width: 25vw;
+    height: 25vw;
+    min-width: 400px;
+    min-height: 400px;
+}
+
+header .gnavi {
+    margin: 50px auto;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+header li {
+    position: relative;
+    width: 127px;
+    height: 110px;
+}
+
+header .diamond {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    border: 1px solid #001A43;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+
+header .diamond__inner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 90px;
+    height: 90px;
+    background: transparent;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    text-align: center;
+}
+
+header .diamond__inner p {
+    line-height: 30px;
+}
+
+@media screen and (max-width:479px) {
+    header img {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    header .gnavi {
+        display: none;
+        height: 0px;
+    }
+}
+
+/*旅先でもうどんだ
+----------------------------------------*/
+#charm .contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#charm .point {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#charm .point img {
+    width: 170px;
+    height: 170px;
+    object-fit: contain;
+}
+
+#charm .point p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+@media screen and (max-width:479px) {
+    #charm .contents {
+        margin: 0 auto;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #charm .point img {
+        width: 150px;
+        height: 150px;
+    }
+
+    #charm .point p {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+}
+
+/*ご当地うどん
+----------------------------------------*/
+#gotouchi {
+    background-color: #FFF4D9;
+    padding: 100px 0px;
+}
+
+.gotouchi {
+    width: 100%;
+}
+
+.gotouchi .content {
+    width: 220px;
+}
+
+.gotouchi .content.second {
+    margin-left: 140px;
+}
+
+.gotouchi img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.gotouchi p {
+    text-align: center;
+}
+
+.gotouchi .slider li {
+    width: 400px;
+}
+
+/*おうちうどん
+----------------------------------------*/
+#home .main {
+    margin: 200px auto 0px auto;
+}
+
+.rakuten {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    margin-bottom: 200px;
+    justify-content: center;
+}
+
+.rakuten .content {
+    width: 300px;
+    margin: 0 20px;
+}
+
+.rakuten .content img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.rakuten .content p {
+    margin-top: -5px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+@media screen and (max-width:1500px) {
+    .rakuten {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width:479px) {
+
+    .rakuten .content {
+        width: 175px;
+        margin: 0 5px;
+    }
+
+    .rakuten .content img {
+        width: 175px;
+        height: 175px;
+    }
+
+    .rakuten .content p {
+        font-size: 15px;
+    }
+}
+
+/*footer
+----------------------------------------*/
+footer.main {
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    padding-top: 200px;
+    padding-bottom: 150px;
+}
+
+footer .sns {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer img {
+    width: 50px;
+    height: 50px;
+}

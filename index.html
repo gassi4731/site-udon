@@ -5,13 +5,31 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hamburger.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="hamburger.js"></script>
-    
+    <script type="text/javascript" src="js/hamburger.js"></script>
+
+    <!--スライダー-->
+    <link href="css/slick-theme.css" rel="stylesheet" type="text/css">
+    <link href="css/slick.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+        });
+    </script>
+
+    <!--animatedModal.js-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+    <!--    <link rel="stylesheet" href="css/normalize.min.css">-->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/animatedModal.min.js"></script>
+
     <!--楽天API-->
     <script>
         var data3;
@@ -46,7 +64,7 @@
 
         request.send();
         request2.send();
-    
+
         //DOM生成
         function create(img, url, text) {
             var card = $("<a>").attr({
@@ -113,6 +131,7 @@
 </head>
 
 <body>
+    <!--ヘッダー-->
     <header>
         <div class="hamburger">
             <nav class="dc-menu">
@@ -155,6 +174,7 @@
             </ul>
         </nav>
     </header>
+    <!--魅力-->
     <section id="charm">
         <div class="main item">
             <h1><span style="line-height: 100px">旅先でも</span><br>うどんだ</h1>
@@ -175,12 +195,317 @@
             </div>
         </div>
     </section>
+    <!--ご当地うどん-->
     <section id="gotouchi">
         <div class="main item">
             <h1>ご当地うどん</h1>
             <p class="desc">日本各地には、うどんを使った郷土料理がたくさんあります。<br>ここでは、全国の個性的なうどんを紹介します。</p>
+            <div class="gotouchi">
+                <ul class="slider">
+                    <li>
+                        <a id="udon01" href="#animatedModal">
+                            <div class="content">
+                                <img src="img/oshibori.jpg" alt="image01">
+                                <p>おしぼりうどん</p>
+                            </div>
+                        </a>
+                        <a id="udon02" href="#animatedModal2">
+                            <div class="content second">
+                                <img src="img/kishimen.jpg" alt="image01">
+                                <p>きしめん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon03" href="#animatedModal3">
+                            <div class="content">
+                                <img src="img/tarai.jpg" alt="image01">
+                                <p>たらいうどん</p>
+                            </div>
+                        </a>
+                        <a id="udon04" href="#animatedModal4">
+                            <div class="content second">
+                                <img src="img/ise.jpg" alt="image01">
+                                <p>伊勢うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon05" href="#animatedModal5">
+                            <div class="content">
+                                <img src="img/inaniwa.jpg" alt="image01">
+                                <p>稲庭うどん</p>
+                            </div>
+                        </a>
+                        <a id="udon06" href="#animatedModal6">
+                            <div class="content second">
+                                <img src="img/yoshida.jpg" alt="image01">
+                                <p>吉田のうどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon07" href="#animatedModal7">
+                            <div class="content">
+                                <img src="img/kintyaku.jpg" alt="image01">
+                                <p>巾着うどん</p>
+                            </div>
+                        </a>
+                        <a id="udon08" href="#animatedModal8">
+                            <div class="content second">
+                                <img src="img/gousetu.jpg" alt="image01">
+                                <p>豪雪うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon09" href="#animatedModal9">
+                            <div class="content">
+                                <img src="img/sanuki.jpg" alt="image01">
+                                <p>讃岐うどん</p>
+                            </div>
+                        </a>
+                        <a id="udon10" href="#animatedModal10">
+                            <div class="content second">
+                                <img src="img/mizusawa.jpg" alt="image01">
+                                <p>水沢うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon11" href="#animatedModal11">
+                            <div class="content">
+                                <img src="img/ume.jpg" alt="image01">
+                                <p>梅うどん</p>
+                            </div>
+                        </a>
+                        <a id="udon12" href="#animatedModal12">
+                            <div class="content second">
+                                <img src="img/hakata.jpg" alt="image01">
+                                <p>博多うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon13" href="#animatedModal13">
+                            <div class="content">
+                                <img src="img/himi.jpg" alt="image01">
+                                <p>氷見うどん</p>
+                            </div>
+                        </a>
+                        <a id="udon14" href="#animatedModal14">
+                            <div class="content second">
+                                <img src="img/Musashino.jpg" alt="image01">
+                                <p>武蔵野うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
+
+    <!--うどん詳細-->
+    <div id="animatedModal">
+        <div class="close-animatedModal close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/oshibori.jpg">
+            <div class="content">
+                <p>長野県</p>
+                <h2>おしぼりうどん</h2>
+                <p>おしぼりうどんは、長野県埴科郡坂城町周辺の郷土料理である。<br>このつゆの名称は「絞り汁」を由来とした「おしぼり」であり、手を拭くおしぼりとはまったく無関係で、ねずみ大根という大根をすりおろし、布巾で搾った汁に信州味噌を溶かしてつゆを作り、うどんをつけて食べる。大根おろしではなく、搾り汁を使うという点が特徴である。味は、大根に依存し辛いものが好まれる。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal2">
+        <div class="close-animatedModal2 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/kishimen.jpg">
+            <div class="content">
+                <p>愛知県</p>
+                <h2>きしめん</h2>
+                <p>きしめんとは、幅が広く薄い日本の麺、ならびにその麺を使用した料理を指す。一般的なうどんとは形が異なり、平たい形状のうどんである。愛知県では「きしめん普及委員会」が発足するなど、愛知県の名物となっている。基準を満たすものは、特に「名古屋きしめん」と表示することが許されている。<br>平たいうどんは平打ちうどん（ひらうちうどん）とも呼ばれ、JASではうどんの一種とされる。群馬県の「ひもかわ」や岡山県の「しのうどん」など、さまざまな名称の平打ちうどんが、日本の各所にある。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div> 
+    <div id="animatedModal3">
+        <div class="close-animatedModal3 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/tarai.jpg">
+            <div class="content">
+                <p>徳島県</p>
+                <h2>たらいうどん</h2>
+                <p>釜揚げにしたうどんを、茹で汁と一緒にたらいにうつし、つけ汁につけて食べる。<br>江戸末期、宮川内谷川周辺にて、きこりが河原に作ったかまどでうどんを茹で、川魚で出汁を取ったつけ汁で食べていたのが起源とされる。<br>本来、たらいうどんには、じんぞく（カワヨシノボリの地方名）で取った出汁をつけ汁に用いる。だが、近年はじんぞくの漁獲量の減少などの理由により、じんぞくを使う飲食店は減り、じんぞく以外の出汁を用いたものが主流となっている。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal4">
+        <div class="close-animatedModal4 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/ise.jpg">
+            <div class="content">
+                <p>三重県</p>
+                <h2>伊勢うどん</h2>
+                <p>伊勢うどん（いせうどん）は、三重県伊勢市を中心に食べられるうどん料理の一種である。<br>かけうどん（素うどん）のように多量のツユに浸ったものではない。たまり醤油に鰹節やいりこ、昆布等の出汁を加えた、黒く濃厚なつゆ（タレ）を、太い麺に絡めて食べるものが主流。それぞれの店が独特のだしを用いる。太い麺は長時間かけて柔らかくゆで上げられており、具やトッピングが少なく、薬味の刻みネギだけで食べることが多い。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal5">
+        <div class="close-animatedModal5 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/inaniwa.jpg">
+            <div class="content">
+                <p>秋田県</p>
+                <h2>稲庭うどん</h2>
+                <p>稲庭うどん（いなにわうどん）は、秋田県南部の手延べ製法による干しうどんである。日本三大うどんのひとつに数えられる。<br>ひやむぎより太く、やや黄色味かかった色をしている。製法としては、うどんというより、そうめんに近い。打ち粉としてデンプンを使う点や、平べったい形状が特徴。ひねりながら練るという独特の製法により、麺は気泡により中空になっている。そのため滑らかな食感が得られる。<br>稲庭うどんについて記述のある「稲庭古今事蹟誌」によると、寛文年間以前に秋田藩稲庭村小沢集落（現:秋田県湯沢市稲庭町字小沢）の佐藤市兵衛によって始まると伝えられている。各地に伝わるふるさとの味として、2007年（平成19年）に農林水産省により「農山漁村の郷土料理百選」として選ばれた。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal6">
+        <div class="close-animatedModal6 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/yoshida.jpg">
+            <div class="content">
+                <p>山梨県</p>
+                <h2>吉田のうどん</h2>
+                <p>富士吉田市が誇る郷土料理・吉田のうどんの最大の特徴は、歯ごたえとコシがとても強い麺。 噛めば噛むほど素材と出汁の旨みが口いっぱいに広がる麺の虜になる人は数知れず、連日うどん店にはたくさんの人が訪れます。 麺や出汁の味を楽しんでもらうため、かけうどんやつけうどんなどシンプルな味付けのうどんが多く、キャベツや馬肉がトッピングされていることが一般的。<br><i>引用元：富士吉田市観光ガイド</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal7">
+        <div class="close-animatedModal7 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/kintyaku.jpg">
+            <div class="content">
+                <p>奈良県</p>
+                <h2>巾着うどん</h2>
+                <p>巾着きつねうどんとは、2006年頃に奈良県で発案された。 油揚げの中にうどんを入れ、口をネギで縛り、出汁を掛けて食べるものである。 一見、どんぶりの中にはお揚げしか見えないが、巾着のような形の揚げ中にうどんがいっぱい詰めてある。揚げでつくった巨大な巾着状の袋がどんぶりに入っているだけ。口をしばってあるヒモのようなものは高知県産の青ネギだ。ネギは高知産の品質のいい、長めのネギじゃないとうまく結べないのだそうだ。かつおとこんぶ風味の出汁をたっぷり吸った巨大なお揚げ袋は特注で、うどんを入れやすく破れにくいよう、焼き加減その他にもさまざまな工夫を凝らしている。うどんは太い麺でコシは無く、やわらかめのうどんを使用している。ダシの味は関西風だけど揚げにダシが染みるように少し濃い味付け。<br><i>引用元：うどんミュージアム</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal8">
+        <div class="close-animatedModal8 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/gousetu.jpg">
+            <div class="content">
+                <p>北海道</p>
+                <h2>豪雪うどん</h2>
+                <p>豪雪うどんは男爵芋からとれたでん粉を使用したうどんです。じゃが芋の一大生産地である羊蹄山麓（ようていさんろく）では、昔から農家の家庭食として「でんぷんうどん」なるものが食べられてきた。じゃが芋のでん粉と小麦粉などの配合を調整し、時間がたっても美味しく食べられるように改良して、平成3年頃よりホテル大一会館が提供を開始した。当初は ホテル内レストランでの提供であったが、お土産用商品開発の要望が増えたため、平成5年に商標登録して本格的に販売を開始。<br><i>引用元：うどんミュージアム</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal9">
+        <div class="close-animatedModal9 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/sanuki.jpg">
+            <div class="content">
+                <p>香川県</p>
+                <h2>讃岐うどん</h2>
+                <p>讃岐うどん（さぬきうどん）は、香川県（旧讃岐国）の特産うどんである。<br> 古くから良質の小麦、塩、醤油、そして地元ではイリコと呼ばれている煮干しなどが、讃岐国（現在の香川県）の特産品であり、それらうどんの材料の入手が容易であった。元禄時代の一枚の屏風絵にも複数のうどん屋を認めることができる。時代が下り、現在の地域ブランド名称として広く知られるようになったのは、うどんを名物とし始めた1960年代頃と考えられている。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal10">
+        <div class="close-animatedModal10 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/mizusawa.jpg">
+            <div class="content">
+                <p>群馬県</p>
+                <h2>水沢うどん</h2>
+                <p>水沢うどん（みずさわうどん）とは、群馬県渋川市伊香保町水沢付近で名物料理とされるうどんである。<br>諸説あるが讃岐うどん・稲庭うどんと並んで、日本三大うどんの一つとされる。<br>水沢うどんは、水澤寺（水澤観音）付近で参拝客向けに提供されたことが始まりとされる手打ちうどんである。麺は若干細めでコシと弾力があり、ところどころ透き通るつるつるした白い麺である。冷たいざるうどんで提供される場合が多い。つけ汁は、しょうゆだれやゴマだれなど、店によって異なる。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal11">
+        <div class="close-animatedModal11 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/ume.jpg">
+            <div class="content">
+                <p>和歌山県</p>
+                <h2>梅うどん</h2>
+                <p>梅うどんとは、創業昭和２５年に和歌山県の成戸治雄さんがナルト製麺所を立ち上げ職人気質で食通だった祖父の血を色濃く受け継いだ３代目の成戸真司さんが平成元年に梅うどんを発売開始した。毎年のように食感の改良に取り組み、現在でも多くのお客様に支えられ人気のうどんである。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal12">
+        <div class="close-animatedModal12 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/hakata.jpg">
+            <div class="content">
+                <p>福岡県</p>
+                <h2>博多うどん</h2>
+                <p>博多うどん（はかたうどん）は、福岡県福岡市を中心に食されるうどん。<br>博多はうどん伝来の地といわれる。諸説あるが、日本に製麺技術をもたらしたのは聖一国師（圓爾）といわれている[1]。圓爾は嘉禎元年（1235年）に渡宋して径山寺で仏教を学び、仏の教えと共に多くの中国文化を身につけて仁知二年（1241年）に帰国。寛元元年（1243年）までの2年の間博多にとどまり、承天寺を開いて布教活動を行ったが、その際に麺や饅頭といった料理を博多にもたらしたといわれている。その後赴任した京都の東福寺に伝わる「大宋諸山之図」（国宝）の中には「明州碧山寺水磨様」という製粉技術を記した書物が伝わっている。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal13">
+        <div class="close-animatedModal13 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/himi.jpg">
+            <div class="content">
+                <p>富山県</p>
+                <h2>氷見うどん</h2>
+                <p>氷見うどん（ひみうどん）は、富山県氷見市周辺の郷土料理である。<br> 作り方は稲庭うどんと同じで竹によりながらかける手縫いで、油を塗らない。ルーツは輪島のそうめんで、1751年（宝暦元年）に「高岡屋」が輪島から技法を取り入れて作り始めたとされる。元々は「糸うどん」との名称で、他の手延べうどんとは異なり、最後まで手で撚りをかける特徴があり、高岡屋においては『一糸伝承』の名で現在も販売されている。このうどんは加賀藩御用達のうどんであり、商品名の通り製法は家伝のものであった。なお、かつて高岡屋では「手打」の表記を採用していたが、これは周辺に類似する製法がなく、市販のような機械製麺ではないとの意味であり、切って麺にしているわけではない。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+    <div id="animatedModal14">
+        <div class="close-animatedModal14 close">
+            <img class="closebt" src="img/closebt.svg">
+        </div>
+
+        <div class="modal-content main">
+            <img src="img/Musashino.jpg">
+            <div class="content">
+                <p>東京都</p>
+                <h2>武蔵野うどん</h2>
+                <p>武蔵野うどん(むさしのうどん)では、東京都北西部の多摩地域から埼玉県西部にかけて広がる武蔵野台地一帯の地域で、古くから食べられてきたうどんについて解説する。多摩川と荒川に挟まれた武蔵野台地は、赤土で不毛の土壌である関東ローム層で厚く覆われているものの、その上に作物栽培に適した黒土の腐食土層が堆積している。しかも、密度の高い関東ローム層は保水性に優れているため、作物には理想的な地層構造になっている。<br><i>引用元：Wikipedia</i></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--おうちうどん-->
     <section id="home">
         <div class="main item">
             <h1>おうちうどん</h1>
@@ -196,4 +521,78 @@
         </div>
         <p class="desc">&copy; Yo Higashida</p>
     </footer>
+
+    <!--anime-->
+    <script>
+        $("#udon01").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon02").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon03").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon04").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon05").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon06").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon07").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon08").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon09").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon10").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon11").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon12").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon13").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon14").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+    </script>
 </body></html>
