@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>やっぱりうどんはうまい。</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/hamburger.css">
@@ -16,11 +16,22 @@
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.slider').slick({
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3
-            });
+            if (window.outerWidth <= 479) {
+                $('.slider').slick({
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                });
+            } else {
+                $('.slider').slick({
+                    autoplay: true,
+                    autoplaySpeed: 5000,
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                });
+            }
         });
     </script>
 
@@ -200,6 +211,7 @@
         <div class="main item">
             <h1>ご当地うどん</h1>
             <p class="desc">日本各地には、うどんを使った郷土料理がたくさんあります。<br>ここでは、全国の個性的なうどんを紹介します。</p>
+
             <div class="gotouchi">
                 <ul class="slider">
                     <li>
@@ -302,6 +314,123 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="gotouchi-sp">
+                <ul class="slider">
+                    <li>
+                        <a id="udon15" href="#animatedModal">
+                            <div class="content">
+                                <img src="img/oshibori.jpg" alt="image01">
+                                <p>おしぼりうどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon16" href="#animatedModal2">
+                            <div class="content second">
+                                <img src="img/kishimen.jpg" alt="image01">
+                                <p>きしめん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon17" href="#animatedModal3">
+                            <div class="content">
+                                <img src="img/tarai.jpg" alt="image01">
+                                <p>たらいうどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon18" href="#animatedModal4">
+                            <div class="content second">
+                                <img src="img/ise.jpg" alt="image01">
+                                <p>伊勢うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon19" href="#animatedModal5">
+                            <div class="content">
+                                <img src="img/inaniwa.jpg" alt="image01">
+                                <p>稲庭うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon20" href="#animatedModal6">
+                            <div class="content second">
+                                <img src="img/yoshida.jpg" alt="image01">
+                                <p>吉田のうどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon21" href="#animatedModal7">
+                            <div class="content">
+                                <img src="img/kintyaku.jpg" alt="image01">
+                                <p>巾着うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon22" href="#animatedModal8">
+                            <div class="content second">
+                                <img src="img/gousetu.jpg" alt="image01">
+                                <p>豪雪うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon23" href="#animatedModal9">
+                            <div class="content">
+                                <img src="img/sanuki.jpg" alt="image01">
+                                <p>讃岐うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon24" href="#animatedModal10">
+                            <div class="content second">
+                                <img src="img/mizusawa.jpg" alt="image01">
+                                <p>水沢うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon25" href="#animatedModal11">
+                            <div class="content">
+                                <img src="img/ume.jpg" alt="image01">
+                                <p>梅うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon26" href="#animatedModal12">
+                            <div class="content second">
+                                <img src="img/hakata.jpg" alt="image01">
+                                <p>博多うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon27" href="#animatedModal13">
+                            <div class="content">
+                                <img src="img/himi.jpg" alt="image01">
+                                <p>氷見うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="udon28" href="#animatedModal14">
+                            <div class="content second">
+                                <img src="img/Musashino.jpg" alt="image01">
+                                <p>武蔵野うどん</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -311,7 +440,7 @@
             <img class="closebt" src="img/closebt.svg">
         </div>
 
-        <div class="modal-content main">
+        <div class="modal-content">
             <img src="img/oshibori.jpg">
             <div class="content">
                 <p>長野県</p>
@@ -333,7 +462,7 @@
                 <p>きしめんとは、幅が広く薄い日本の麺、ならびにその麺を使用した料理を指す。一般的なうどんとは形が異なり、平たい形状のうどんである。愛知県では「きしめん普及委員会」が発足するなど、愛知県の名物となっている。基準を満たすものは、特に「名古屋きしめん」と表示することが許されている。<br>平たいうどんは平打ちうどん（ひらうちうどん）とも呼ばれ、JASではうどんの一種とされる。群馬県の「ひもかわ」や岡山県の「しのうどん」など、さまざまな名称の平打ちうどんが、日本の各所にある。<br><i>引用元：Wikipedia</i></p>
             </div>
         </div>
-    </div> 
+    </div>
     <div id="animatedModal3">
         <div class="close-animatedModal3 close">
             <img class="closebt" src="img/closebt.svg">
@@ -514,12 +643,12 @@
         <div class="rakuten">
         </div>
     </section>
-    <footer class="main item">
-        <div class="sns">
+    <footer class="main">
+        <div class="sns item">
             <a href="#"><img src="img/facebook.svg"></a>
             <a href="#"><img src="img/twitter.svg"></a>
         </div>
-        <p class="desc">&copy; Yo Higashida</p>
+        <p class="desc item">&copy; Yo Higashida</p>
     </footer>
 
     <!--anime-->
@@ -590,6 +719,76 @@
             color: '#001A43',
         });
         $("#udon14").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon15").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon16").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon17").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon18").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon19").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon20").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon21").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon22").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon23").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon24").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon25").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon26").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon27").animatedModal({
+            animatedIn: 'zoomIn',
+            animatedOut: 'bounceOut',
+            color: '#001A43',
+        });
+        $("#udon28").animatedModal({
             animatedIn: 'zoomIn',
             animatedOut: 'bounceOut',
             color: '#001A43',

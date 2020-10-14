@@ -1,7 +1,9 @@
+/*
 @font-face {
     font-family: 'Tomoe';
-    src: url(../fonts/Tomoe.otf) format('otf');
+    src: local(../fonts/Tomoe.ttf) format('ttf');
 }
+*/
 
 * {
     margin: 0;
@@ -35,7 +37,7 @@ a {
 
 h1 {
     color: #001A43;
-    font-family: Tomoe;
+    font-family: ro-san-std, sans-serif;
     font-weight: normal;
     font-size: 72px;
     letter-spacing: 7px;
@@ -90,11 +92,12 @@ h1 {
     transform: rotate(90deg);
 }
 
-.modal-content.main {
+.modal-content {
+    width: 1080px;
     margin: 0 auto;
 }
 
-.modal-content .content{
+.modal-content .content {
     margin-left: 60px;
     min-height: 400px;
 }
@@ -105,7 +108,7 @@ h1 {
     object-fit: cover;
 }
 
-.modal-content{
+.modal-content {
     display: flex;
     align-items: center;
 }
@@ -115,10 +118,40 @@ h1 {
     color: #fff;
 }
 
-.modal-content h2{
+.modal-content h2 {
     font-size: 30px;
     margin-bottom: 20px;
 }
+
+@media screen and (max-width:479px) {
+    .modal-content {
+        width: 100vw;
+        flex-wrap: wrap;
+    }
+
+    .modal-content img {
+        width: 100vw;
+        height: 56.25vw;
+    }
+
+    .modal-content .content {
+        margin-top: 30px;
+        margin-right: 60px;
+        margin-bottom: 30px;
+    }
+
+    .close {
+        margin: 45px 0;
+    }
+}
+
+/*
+
+.modal-content{
+    width: 100vw;
+    margin: 100px auto;
+}
+*/
 
 /*画像フェイドイン
 ----------------------------------------*/
@@ -352,19 +385,54 @@ header .diamond__inner p {
     margin-left: 140px;
 }
 
-.gotouchi img {
+.gotouchi img,
+.gotouchi-sp img {
     width: 220px;
     height: 220px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.gotouchi p {
+.gotouchi p,
+.gotouchi-sp p {
     text-align: center;
 }
 
 .gotouchi .slider li {
     width: 400px;
+}
+
+.gotouchi-sp {
+    display: none;
+}
+
+@media screen and (max-width:479px) {
+    .gotouchi {
+        display: none;
+    }
+
+    .gotouchi-sp {
+        display: block;
+        width: 100vw;
+    }
+
+    .gotouchi-sp img {
+        width: 60vw;
+        height: 60vw;
+        margin: 0 auto;
+    }
+
+    .gotouchi-sp .slick-prev {
+        left: 10px;
+    }
+
+    .gotouchi-sp .slick-next {
+        right: 40px;
+    }
+
+    .gotouchi-sp p {
+        font-size: 20px;
+    }
 }
 
 /*おうちうどん
