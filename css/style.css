@@ -249,7 +249,7 @@ header {
 header .headerImage {
     width: 100%;
     height: 100%;
-    background-image: url(../img/header.png);
+    background-image: url(../img/header.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
