@@ -1,10 +1,3 @@
-/*
-@font-face {
-    font-family: 'Tomoe';
-    src: local(../fonts/Tomoe.ttf) format('ttf');
-}
-*/
-
 * {
     margin: 0;
     padding: 0;
@@ -53,7 +46,13 @@ h1 {
 @media screen and (max-width:479px) {
     .main {
         width: 100%;
-        margin: 100px auto;
+        margin: 80px auto;
+    }
+
+    .main .desc {
+        padding: 0 40px;
+        margin: 30px auto;
+        font-size: 15px;
     }
 
     h1 {
@@ -66,8 +65,8 @@ h1 {
         font-size: 15px;
     }
 
-    .main .desc {
-        padding: 0 40px;
+    .sp {
+        display: none;
     }
 }
 
@@ -141,7 +140,7 @@ h1 {
     }
 
     .close {
-        margin: 45px 0;
+        margin: 30px 0;
     }
 }
 
@@ -335,6 +334,8 @@ header .diamond__inner p:hover {
     header img {
         width: 80vw;
         height: 80vw;
+        min-width: 0;
+        min-height: 0;
     }
 
     header .gnavi {
@@ -376,13 +377,13 @@ header .diamond__inner p:hover {
     }
 
     #charm .point img {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
     }
 
     #charm .point p {
-        font-size: 25px;
-        margin-bottom: 30px;
+        font-size: 20px;
+        margin-bottom: 20px;
     }
 }
 
