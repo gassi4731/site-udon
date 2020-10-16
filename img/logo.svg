@@ -1,1 +1,17 @@
-<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><path d="m0 0h500v500h-500z" fill="#ceb794"/><text style="writing-mode:tb;glyph-orientation-vertical:0deg;font-size:97.08;fill:#001a43;font-family:taisyokatujippoi7fontT5;letter-spacing:.14em" transform="translate(400 41.97)">やっぱり<tspan x="-150" y="0">うどんが</tspan><tspan x="-300" y="0">うまい</tspan><tspan letter-spacing="-.36em" x="-300" y="330.86">。</tspan></text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
+  <g id="グループ_59" data-name="グループ 59" transform="translate(-750 -192)">
+    <rect id="長方形_38" data-name="長方形 38" width="420" height="420" transform="translate(750 192)" fill="#d6b88c"/>
+    <text id="や_っ_ぱ_り" data-name="や
+っ
+ぱ
+り" transform="translate(1047.595 293)" fill="#001a43" font-size="80" font-family="taisyokatujippoi7fontT5"><tspan x="0" y="0">や</tspan><tspan x="0" y="95">っ</tspan><tspan x="0" y="190">ぱ</tspan><tspan x="0" y="285">り</tspan></text>
+    <text id="う_ど_ん_が" data-name="う
+ど
+ん
+が" transform="translate(920.405 290)" fill="#001a43" font-size="80" font-family="taisyokatujippoi7fontT5"><tspan x="0" y="0">う</tspan><tspan x="0" y="95">ど</tspan><tspan x="0" y="190">ん</tspan><tspan x="0" y="285">が</tspan></text>
+    <text id="う_ま_い_" data-name="う
+ま
+い
+。" transform="translate(793 293)" fill="#001a43" font-size="80" font-family="taisyokatujippoi7fontT5"><tspan x="0" y="0">う</tspan><tspan x="0" y="95">ま</tspan><tspan x="0" y="190">い</tspan><tspan x="0" y="285">。</tspan></text>
+  </g>
+</svg>

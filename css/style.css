@@ -292,6 +292,16 @@ header .diamond {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     overflow: hidden;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+header .diamond:hover {
+    background-color: #001A43;
+    -webkit-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
 }
 
 header .diamond__inner {
@@ -309,6 +319,16 @@ header .diamond__inner {
 
 header .diamond__inner p {
     line-height: 30px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+header .diamond__inner p:hover {
+    color: #fff;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 @media screen and (max-width:479px) {
@@ -379,6 +399,17 @@ header .diamond__inner p {
 
 .gotouchi .content {
     width: 220px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.gotouchi .content:hover,
+.gotouchi-sp .content:hover {
+    opacity: 0.5;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .gotouchi .content.second {
@@ -391,6 +422,7 @@ header .diamond__inner p {
     height: 220px;
     border-radius: 50%;
     object-fit: cover;
+    background-color: #ffffff;
 }
 
 .gotouchi p,
