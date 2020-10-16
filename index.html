@@ -43,38 +43,49 @@
 
     <!--楽天API-->
     <script>
-        var data3;
         var random = Math.round(Math.random() * 3);
         var request = new XMLHttpRequest();
-        var request2 = new XMLHttpRequest();
+        var motoData = {foodImageUrl:"https://image.space.rakuten.co.jp/d/strg/ctrl/3/50…38eaaad906314c31229df5e927a6a852a827.32.2.3.2.jpg",
+                   recipeTitle:"カレーの残りで！☆簡単カレーうどん☆",
+                   recipeUrl:"https://recipe.rakuten.co.jp/recipe/1490004239/"};
 
-        request.open('GET', 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152-150&applicationId=1051623488993120985', true);
+        request.open('GET', 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152&applicationId=1051623488993120985', true);
         request.responseType = 'json';
+        
+//        https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152-150&applicationId=1051623488993120985
 
-        request2.open('GET', 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152&applicationId=1051623488993120985', true);
-        request2.responseType = 'json';
+//        request2.open('GET', 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152&applicationId=1051623488993120985', true);
+//        request2.responseType = 'json';
 
         request.onload = function() {
             var data = this.response.result;
+            data3 = data.concat(motoData[0]);
+            console.log(data3);
+            
+            
+            for (var i = 0; i <= 4; i++) {
+                console.log(data[i]);
+                create(data[i]['foodImageUrl'], data[i]['recipeUrl'], data[i]['recipeTitle']);
+            }
 
-            request2.onload = function() {
-                var data2 = this.response.result;
-                console.log(data2[0]['foodImageUrl']);
-                data3 = data.concat(data2[random]);
-                console.log(data3);
-
-                $(function() {
-                    for (var i = 0; i <= 4; i++) {
-                        console.log(i);
-                        console.log(data3[i]);
-                        create(data3[i]['foodImageUrl'], data3[i]['recipeUrl'], data3[i]['recipeTitle']);
-                    }
-                });
-            };
+//            request2.onload = function() {
+//                var data2 = this.response.result;
+//                console.log(data2[0]['foodImageUrl']);
+//                data3 = data.concat(data2[random]);
+//                console.log(data3);
+//
+//                $(function() {
+//                    for (var i = 0; i <= 4; i++) {
+//                        console.log(i);
+//                        console.log(data3[i]);
+//                        create(data3[i]['foodImageUrl'], data3[i]['recipeUrl'], data3[i]['recipeTitle']);
+//                    }
+//                });
+//            };
         };
 
         request.send();
-        request2.send();
+//        request2.send();
 
         //DOM生成
         function create(img, url, text) {
