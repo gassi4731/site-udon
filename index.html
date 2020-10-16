@@ -45,47 +45,18 @@
     <script>
         var random = Math.round(Math.random() * 3);
         var request = new XMLHttpRequest();
-        var motoData = {foodImageUrl:"https://image.space.rakuten.co.jp/d/strg/ctrl/3/50…38eaaad906314c31229df5e927a6a852a827.32.2.3.2.jpg",
-                   recipeTitle:"カレーの残りで！☆簡単カレーうどん☆",
-                   recipeUrl:"https://recipe.rakuten.co.jp/recipe/1490004239/"};
 
         request.open('GET', 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152&applicationId=1051623488993120985', true);
         request.responseType = 'json';
-        
-//        https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152-150&applicationId=1051623488993120985
-
-//        request2.open('GET', 'https://app.rakuten.co.jp/services/api/Recipe/CategoryRanking/20170426?format=json&categoryId=16-152&applicationId=1051623488993120985', true);
-//        request2.responseType = 'json';
 
         request.onload = function() {
             var data = this.response.result;
-            data3 = data.concat(motoData[0]);
-            console.log(data3);
-            
             
             for (var i = 0; i <= 4; i++) {
                 console.log(data[i]);
                 create(data[i]['foodImageUrl'], data[i]['recipeUrl'], data[i]['recipeTitle']);
             }
-
-//            request2.onload = function() {
-//                var data2 = this.response.result;
-//                console.log(data2[0]['foodImageUrl']);
-//                data3 = data.concat(data2[random]);
-//                console.log(data3);
-//
-//                $(function() {
-//                    for (var i = 0; i <= 4; i++) {
-//                        console.log(i);
-//                        console.log(data3[i]);
-//                        create(data3[i]['foodImageUrl'], data3[i]['recipeUrl'], data3[i]['recipeTitle']);
-//                    }
-//                });
-//            };
-        };
-
         request.send();
-//        request2.send();
 
         //DOM生成
         function create(img, url, text) {
@@ -199,7 +170,7 @@
     <!--魅力-->
     <section id="charm">
         <div class="main item">
-            <h1><span style="line-height: 100px">旅先でも</span><br>うどんだ</h1>
+            <h1>旅先でも、うどんだ</h1>
             <p class="desc">うどんは小麦粉に水を加えて練り合わせ、めん状に加工したものです。<br class="sp">歴史は、そばよりも古く、日本人に最も愛されてきた料理といえます。</p>
             <div class="contents">
                 <div class="point item">
