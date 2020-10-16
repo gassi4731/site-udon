@@ -14,13 +14,21 @@
     <link href="css/slick-theme.css" rel="stylesheet" type="text/css">
     <link href="css/slick.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/slick.min.js"></script>
+
+    <!--animatedModal.js-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+    <!--    <link rel="stylesheet" href="css/normalize.min.css">-->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/animatedModal.min.js"></script>
+
     <script>
+        // ローダー
         window.onload = function() {
             const spinner = document.getElementById('loading');
             spinner.classList.add('loaded');
         }
-    </script>
-    <script>
+
+        //スライダー
         $(document).ready(function() {
             if (window.outerWidth <= 479) {
                 $('.slider').slick({
@@ -39,13 +47,21 @@
                 });
             }
         });
-    </script>
 
-    <!--animatedModal.js-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
-    <!--    <link rel="stylesheet" href="css/normalize.min.css">-->
-    <link rel="stylesheet" href="css/animate.min.css">
-    <script src="js/animatedModal.min.js"></script>
+        //順番にフェイドイン
+        $(function() {
+            $(window).scroll(function() {
+                $('.item').each(function() {
+                    var elemPos = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > elemPos - windowHeight) {
+                        $(this).addClass('item-scroll');
+                    }
+                });
+            });
+        });
+    </script>
 
     <!--楽天API-->
     <script>
@@ -56,30 +72,31 @@
         request.responseType = 'json';
 
         request.onload = function() {
-                var data = this.response.result;
+            var data = this.response.result;
 
-                for (var i = 0; i <= 4; i++) {
-                    console.log(data[i]);
-                    create(data[i]['foodImageUrl'], data[i]['recipeUrl'], data[i]['recipeTitle']);
-                }
-                request.send();
+            for (var i = 0; i <= 4; i++) {
+                console.log(data[i]);
+                create(data[i]['foodImageUrl'], data[i]['recipeUrl'], data[i]['recipeTitle']);
+            };
+        };
+        request.send();
 
-                //DOM生成
-                function create(img, url, text) {
-                    var card = $("<a>").attr({
-                        href: url,
-                        class: "item",
-                        target: "_blank"
-                    });
-                    var content = $("<div>").addClass("content");
-                    content.append($("<img>").attr({
-                        src: img,
-                        alt: ""
-                    }));
-                    content.append($("<p>").text(text));
-                    card.append(content);
-                    $('.rakuten').append(card);
-                }
+        //DOM生成
+        function create(img, url, text) {
+            var card = $("<a>").attr({
+                href: url,
+                class: "item",
+                target: "_blank"
+            });
+            var content = $("<div>").addClass("content");
+            content.append($("<img>").attr({
+                src: img,
+                alt: ""
+            }));
+            content.append($("<p>").text(text));
+            card.append(content);
+            $('.rakuten').append(card);
+        }
     </script>
     <!--font-->
     <script>
@@ -111,21 +128,6 @@
             };
             s.parentNode.insertBefore(tk, s)
         })(document);
-    </script>
-    <!--順番にフェイドイン-->
-    <script>
-        $(function() {
-            $(window).scroll(function() {
-                $('.item').each(function() {
-                    var elemPos = $(this).offset().top;
-                    var scroll = $(window).scrollTop();
-                    var windowHeight = $(window).height();
-                    if (scroll > elemPos - windowHeight) {
-                        $(this).addClass('item-scroll');
-                    }
-                });
-            });
-        });
     </script>
 </head>
 
