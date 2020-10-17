@@ -147,35 +147,11 @@ h1 {
   }
 }
 
-
-/*
-.spinner {
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border-radius: 100%;
-    animation: sk-scaleout 1.0s infinite ease-in-out;
-}
-*/
-
 .loaded {
     opacity: 0;
     visibility: hidden;
 }
 
-/* ローディングアニメーション */
-/*
-@keyframes sk-scaleout {
-    0% {
-        transform: scale(0);
-    }
-
-    100% {
-        transform: scale(1.0);
-        opacity: 0;
-    }
-}
-*/
 
 /*animetion.js
 ----------------------------------------*/
@@ -251,14 +227,6 @@ h1 {
     }
 }
 
-/*
-
-.modal-content{
-    width: 100vw;
-    margin: 100px auto;
-}
-*/
-
 /*画像フェイドイン
 ----------------------------------------*/
 .delayed-image {
@@ -306,28 +274,28 @@ h1 {
 }
 
 .item.item-scroll:nth-child(2) {
+    -webkit-animation: example 3s ease 1.0s 1 forwards;
+    animation: example 3s ease 1.0s 1 forwards;
+}
+
+.item.item-scroll:nth-child(3) {
     -webkit-animation: example 3s ease 1.5s 1 forwards;
     animation: example 3s ease 1.5s 1 forwards;
 }
 
-.item.item-scroll:nth-child(3) {
-    -webkit-animation: example 3s ease 2s 1 forwards;
-    animation: example 3s ease 2s 1 forwards;
+.item.item-scroll:nth-child(4) {
+    -webkit-animation: example 3s ease 2.0s 1 forwards;
+    animation: example 3s ease 2.0s 1 forwards;
 }
 
-.item.item-scroll:nth-child(4) {
+.item.item-scroll:nth-child(5) {
     -webkit-animation: example 3s ease 2.5s 1 forwards;
     animation: example 3s ease 2.5s 1 forwards;
 }
 
-.item.item-scroll:nth-child(5) {
-    -webkit-animation: example 3s ease 3s 1 forwards;
-    animation: example 3s ease 3s 1 forwards;
-}
-
 .item.item-scroll:nth-child(6) {
-    -webkit-animation: example 3s ease 3.5s 1 forwards;
-    animation: example 3s ease 3.5s 1 forwards;
+    -webkit-animation: example 3s ease 3.0s 1 forwards;
+    animation: example 3s ease 3.0s 1 forwards;
 }
 
 @-webkit-keyframes example {
@@ -398,16 +366,16 @@ header .diamond {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     overflow: hidden;
-    -webkit-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 header .diamond:hover {
     background-color: #001A43;
-    -webkit-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 header .diamond__inner {
@@ -466,8 +434,8 @@ header .diamond__inner p:hover {
 }
 
 #charm .point img {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
     object-fit: contain;
 }
 
